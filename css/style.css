@@ -1,15 +1,12 @@
 @charset "UTF-8";
 
-/* --------------------------------
- * base
- * -------------------------------- */
 html {
   font-size: 62.5%;
 }
 body {
   color: #333;
   font-size: 1.2rem;
-  font-family: "Hiragino Kaku Gothic ProN",  Meiryo,  sans-serif;
+  font-family: "Hiragino Lali gothic ProN" , Meiryo, sans-serif;
 }
 *, *::before, *::after {
   box-sizing: border-box;
@@ -17,45 +14,43 @@ body {
 a:link, a:visited, a:hover, a:active {
   color: #d03c56;
   text-decoration: none;
+  /* リンク下の下線の削除 */
 }
 
 
-/* --------------------------------
- * parts
- * -------------------------------- */
-.clearfix::after {
-  content: '';
-  display: block;
-  clear: both;
-}
-.heading {
-  padding: 10px 12px;
-  background: url('../images/bg-slash.gif');
-  letter-spacing: 1px;
-  font-size: 1.6rem;
-}
-.hidden {
-  display: none;
-}
 
-
-/* --------------------------------
- * header
- * -------------------------------- */
 .header {
   width: 100%;
   padding: 28px 0 10px;
   background: url('../images/bg-header.gif') repeat-x;
   box-shadow: 0 0 10px 1px #e3e3e3;
 }
+.wrapper {
+  width: 970px;
+  margin: 30px auto 40px;
+  display: flex;
+}
+.main {
+  display: block;
+  float: left;
+  width: 660px;
+}
+.sidemenu {
+  float: right;
+  width: 275px;
+}
+.footer {
+  width: 100%;
+}
+
 .logo {
   width: 225px;
   height: 56px;
   margin: 0 auto;
   background: url('../images/logo.png') no-repeat;
+  overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  overflow: hidden;
 }
 .logo a {
   display: block;
@@ -78,52 +73,35 @@ a:link, a:visited, a:hover, a:active {
   text-align: center;
   border-radius: 8px;
   color: #666;
-  font-size: 1.3rem;
+  font-style: 1.3rem;
   letter-spacing: 1px;
-  transition: 0.15s;
+  transition: 1s;
 }
 .global-nav .nav-item.active a,
 .global-nav .nav-item a:hover {
   background-color: #d03c56;
-  color: #fff;
+  display: #ffffff;
 }
-
-
-/* --------------------------------
- * wrapper
- * -------------------------------- */
-.wrapper {
-  width: 970px;
-  margin: 30px auto 40px;
-}
-
-
-/* --------------------------------
- * main
- * -------------------------------- */
-.main {
-  display: block;
-  float: left;
-  width: 660px;
+.hidden {
+  display: none;
 }
 .hot-topic {
   display: block;
   height: 300px;
   margin-bottom: 30px;
   box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.15);
-  transition: opacity 0.15s;
+  transition: opacity 0.3s;
+  display: flex;
 }
 .hot-topic:hover {
   opacity: 0.85;
 }
 .hot-topic .image {
-  float: left;
   width: 50%;
   height: 100%;
 }
 .hot-topic .content {
   position: relative;
-  float: left;
   width: 50%;
   height: 100%;
   padding: 105px 25px 0;
@@ -134,7 +112,7 @@ a:link, a:visited, a:hover, a:active {
   margin-bottom: 15px;
   color: #fff;
   font-weight: normal;
-  font-size: 2.0rem;
+  font-size: 2.0rem
 }
 .hot-topic .desc {
   color: #ddc;
@@ -150,8 +128,14 @@ a:link, a:visited, a:hover, a:active {
   text-align: center;
   letter-spacing: 1px;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-style: 1.1rem;
   line-height: 1;
+}
+.heading {
+  padding: 10px 12px;
+  background: url('../images/bg-slash.gif');
+  letter-spacing: 1px;
+  font-style: 1.6rem;
 }
 .scroll-list {
   max-height: 220px;
@@ -164,7 +148,7 @@ a:link, a:visited, a:hover, a:active {
   padding: 10px 15px;
   color: #333;
   font-size: 0;
-  transition: background-color 0.1s;
+  transition: background-color 0.1S;
 }
 .scroll-list .scroll-item:nth-of-type(even) a {
   background: url('../images/bg-slash.gif');
@@ -175,6 +159,7 @@ a:link, a:visited, a:hover, a:active {
 .scroll-list .date {
   display: inline-block;
   width: 19%;
+  font-size: 1.0rem;
   letter-spacing: 1px;
   font-weight: bold;
   font-size: 1.0rem;
@@ -202,6 +187,11 @@ a:link, a:visited, a:hover, a:active {
   white-space: nowrap;
   font-size: 1.2rem;
 }
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 .article-box {
   position: relative;
   display: block;
@@ -209,21 +199,14 @@ a:link, a:visited, a:hover, a:active {
   height: 360px;
   margin-bottom: 30px;
   padding: 210px 15px 0;
-  box-shadow: 6px 6px 8px -4px rgba(0, 0, 0, 0.15);
-  transition: opacity 0.15s;
+  transition: opacity 0.30s;
 }
 .article-box:hover {
   opacity: 0.8;
 }
-.article-box:nth-of-type(odd) {
-  float: left;
-}
-.article-box:nth-of-type(even) {
-  float: right;
-}
 .article-box .title {
   margin-top: 30px;
-  color: #555;
+  color: #555555;
   font-size: 1.4rem;
   line-height: 1.6;
 }
@@ -254,15 +237,6 @@ a:link, a:visited, a:hover, a:active {
   left: 0;
   width: 100%;
 }
-
-
-/* --------------------------------
- * sidemenu
- * -------------------------------- */
-.sidemenu {
-  float: right;
-  width: 275px;
-}
 .ranking {
   margin-bottom: 30px;
   list-style-type: none;
@@ -274,7 +248,7 @@ a:link, a:visited, a:hover, a:active {
 .ranking .ranking-item a {
   display: block;
   font-size: 0;
-  transition: opacity 0.15s;
+  transition: opacity 0.3s;
 }
 .ranking .ranking-item a:hover {
   opacity: 0.8;
@@ -282,6 +256,14 @@ a:link, a:visited, a:hover, a:active {
 .ranking .image {
   width: 55px;
   height: 55px;
+}
+.ranking .text {
+  display: inline-block;
+  width: 182px;
+  color: #000;
+  vertical-align: top;
+  font-size: 1.2rem;
+  line-height: 1.5;
 }
 .ranking .order {
   display: inline-block;
@@ -294,18 +276,7 @@ a:link, a:visited, a:hover, a:active {
   text-align: center;
   font-weight: bold;
   line-height: 16px;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-}
-.ranking .order::before {
-  content: counter(ranking);
-  display: inline-block;
-  counter-increment: ranking;
-  font-size: 1.0rem;
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
 }
 .ranking .ranking-item:nth-of-type(1) .order,
 .ranking .ranking-item:nth-of-type(2) .order,
@@ -324,13 +295,12 @@ a:link, a:visited, a:hover, a:active {
 .ranking .ranking-item:nth-of-type(3) .order {
   background-color: #a0541a;
 }
-.ranking .text {
+.ranking .order::before {
+  content: counter(ranking);
+  counter-increment: ranking;
   display: inline-block;
-  width: 182px;
-  color: #000;
-  vertical-align: top;
-  font-size: 1.2rem;
-  line-height: 1.5;
+  font-size: 1.0rem;
+  transform: rotate(-45deg);
 }
 .documents {
   margin: 10px 10px 30px;
@@ -342,7 +312,7 @@ a:link, a:visited, a:hover, a:active {
 .documents > li .title {
   margin: 15px 0;
   padding-left: 8px;
-  border-left: 5px solid #d03c56;
+  border-left: 5px solid d03c56;
   font-size: 1.4rem;
   line-height: 1.2;
 }
@@ -364,6 +334,7 @@ a:link, a:visited, a:hover, a:active {
   padding: 15px;
   background-color: #ccc;
   font-size: 0;
+  /* 子要素を並べる際にその要素間の空間を消すために一旦font-sizeを０にした後、それぞれを指定 */
 }
 .search-box > * {
   font-size: 1.2rem;
@@ -385,11 +356,6 @@ a:link, a:visited, a:hover, a:active {
 .search-box .text {
   margin-top: 12px;
 }
-
-
-/* --------------------------------
- * footer
- * -------------------------------- */
 .footer {
   width: 100%;
   padding: 20px 0 30px;
@@ -400,12 +366,13 @@ a:link, a:visited, a:hover, a:active {
   width: 970px;
   margin: 0 auto;
   text-align: right;
-  font-size: 0;
+  font-size: 1;
 }
 .horizontal-list .horizontal-item {
   display: inline-block;
   padding: 0 15px;
   letter-spacing: 1px;
+  font-size: 1.1rem;
 }
 .horizontal-list .horizontal-item + .horizontal-item {
   border-left: 1px solid #bbb;
@@ -414,7 +381,7 @@ a:link, a:visited, a:hover, a:active {
   border-bottom: 1px dashed #777;
   color: #bbb;
   font-size: 1.1rem;
-  transition: color 0.15s;
+  transition: color 0.3s;
 }
 .horizontal-list .horizontal-item a:hover {
   color: #ddd;
@@ -424,46 +391,3 @@ a:link, a:visited, a:hover, a:active {
   text-align: center;
   letter-spacing: 1px;
 }
-
-
-/* --------------------------------
- * challenge
- *
- * 288行目からの.ranking .order, .ranking .order::beforeの
- * スタイルをコメントアウトしてから適用してください。
- * -------------------------------- */
-/*
-.ranking .ranking-item {
-  position: relative;
-}
-.ranking .image {
-  margin-right: 20px;
-}
-.ranking .order {
-  position: absolute;
-  top: -9px;
-  left: 44px;
-  width: 20px;
-  height: 20px;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  background-color: #fff;
-  color: #aaa;
-  text-align: center;
-  font-weight: bold;
-  line-height: 18px;
-}
-.ranking .order::before {
-  content: counter(ranking);
-  counter-increment: ranking;
-  font-size: 1.0rem;
-}
-.ranking .ranking-item:nth-of-type(1) .order,
-.ranking .ranking-item:nth-of-type(2) .order,
-.ranking .ranking-item:nth-of-type(3) .order {
-  line-height: 20px;
-}
-.ranking .text {
-  width: 200px;
-}
-*/
